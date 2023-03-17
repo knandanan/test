@@ -1,0 +1,1 @@
+python3 conversion_pth2onnx.py --model resnet10t --input-size 3 128 128  --num-classes 2 --checkpoint ./model_best.pth.tar

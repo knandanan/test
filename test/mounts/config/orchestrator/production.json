@@ -1,0 +1,228 @@
+{
+    "graphManager": {
+        "mq": "zmq"
+    },
+    "healthMonitor": {
+        "enable": true
+    },
+    "metricServer": {
+        "enable": true
+    },
+    "graphNodes": [
+        {
+            "monitor": false,
+            "modify_channel": false,
+            "ports": [
+                {
+                    "channel": "GM-CONTROL-CHANNEL",
+                    "zmq": {
+                        "addresses": [
+                            "tcp://10.16.239.10:5000"
+                        ],
+                        "connection": "bind",
+                        "socketType": "ROUTER"
+                    },
+                    "port": "gmControl",
+                    "type": "rpc"
+                }
+            ],
+            "metrics": [
+                {
+                    "min": 0,
+                    "max": 30,
+                    "name": "heartbeatTimeOut",
+                    "action": "full-restart"
+                }
+            ],
+            "set_connection": true,
+            "name": "graphManager"
+        },
+        {
+            "monitor": false,
+            "modify_channel": false,
+            "ports": [
+                {
+                    "channel": "METRIC-CHANNEL",
+                    "zmq": {
+                        "socketType": "ROUTER",
+                        "addresses": [
+                            "tcp://10.16.239.10:5001"
+                        ]
+                    },
+                    "port": "metricServer",
+                    "type": "rpc-server"
+                }
+            ],
+            "metrics": [
+                {
+                    "min": 0,
+                    "max": 30,
+                    "name": "heartbeatTimeOut",
+                    "action": "full-restart"
+                }
+            ],
+            "set_connection": true,
+            "name": "metricServer"
+        },
+        {
+      "set_connection": true,
+      "modify_channel": false,
+      "name": "dummy",
+      "ports": [
+        {"port": "Output",   "channel": "BATCHER-OUT", "type": "producer", "zmq": {"addresses": ["tcp://10.16.239.1:1233"], "connection": "bind", "socketType" : "PUSH"}}
+      ],
+      "monitor" : false,
+      "metrics" : [{ "name": "heartbeatTimeOut", "min": 0, "max": 30, "action": "single-restart"}]
+    },
+        {
+            "monitor": true,
+            "modify_channel": false,
+            "ports": [
+                {
+                    "channel": "BATCHER-OUT",
+                    "zmq": {
+                        "socketType": "PULL"
+                    },
+                    "port": "Input",
+                    "type": "consumer"
+                },
+                {
+                    "channel": "METRIC-CHANNEL",
+                    "zmq": {
+                        "socketType": "DEALER"
+                    },
+                    "port": "Metric",
+                    "type": "rpc-client"
+                },
+                {
+                    "channel": "PERSON-DETECT-OUT-1",
+                    "zmq": {
+                        "addresses": [
+                            "USE_eth0"
+                        ],
+                        "connection": "bind",
+                        "socketType": "PUSH"
+                    },
+                    "port": "Output",
+                    "type": "producer"
+                },
+                {
+                    "channel": "MONITORING-OUT-1",
+                    "zmq": {
+                        "addresses": [
+                            "USE_eth0"
+                        ],
+                        "connection": "bind",
+                        "socketType": "PUSH"
+                    },
+                    "port": "Monitoring",
+                    "type": "producer"
+                }
+            ],
+            "metrics": [
+                {
+                    "min": 0,
+                    "max": 30,
+                    "name": "heartbeatTimeOut",
+                    "action": "single-restart"
+                }
+            ],
+            "set_connection": true,
+            "name": "classifierv2"
+        }
+    ],
+    "graphChannels": [
+        {
+            "monitor": false,
+            "name": "GM-CONTROL-CHANNEL"
+        },
+        {
+            "monitor": false,
+            "name": "METRIC-CHANNEL"
+        },
+        {
+            "monitor": false,
+            "name": "CAMERA-INPUT",
+            "metrics": [
+                {
+                    "min": 0,
+                    "max": "100",
+                    "name": "rate",
+                    "action": "full-restart"
+                }
+            ]
+        },
+        {
+            "monitor": false,
+            "name": "PERSON-DETECT-OUT-1",
+            "metrics": [
+                {
+                    "min": 0,
+                    "max": "100",
+                    "name": "rate",
+                    "action": "reset-connection"
+                }
+            ]
+        },
+        {
+            "monitor": false,
+            "name": "BGS-OUT-1",
+            "metrics": [
+                {
+                    "min": 0,
+                    "max": "100",
+                    "name": "rate",
+                    "action": "reset-connection"
+                }
+            ]
+        },
+        {
+            "monitor": false,
+            "name": "TRACK-OUT-1",
+            "metrics": [
+                {
+                    "min": 0,
+                    "max": "100",
+                    "name": "rate",
+                    "action": "reset-connection"
+                }
+            ]
+        },
+        {
+            "monitor": false,
+            "name": "MONITORING-OUT-1",
+            "metrics": [
+                {
+                    "min": 0,
+                    "max": "100",
+                    "name": "rate",
+                    "action": "reset-connection"
+                }
+            ]
+        },
+        {
+            "monitor": false,
+            "name": "HR-OUT",
+            "metrics": [
+                {
+                    "min": 0,
+                    "max": "100",
+                    "name": "rate",
+                    "action": "reset-connection"
+                }
+            ]
+        },
+        {
+            "monitor": false,
+            "name": "RULES-OUT-1",
+            "metrics": [
+                {
+                    "min": 0,
+                    "max": "100",
+                    "name": "rate",
+                    "action": "reset-connection"
+                }
+            ]
+        }
+    ]
+}

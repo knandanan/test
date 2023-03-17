@@ -1,0 +1,152 @@
+{
+  "moduleData": {
+    "dryRun": false,
+    "imageCount": 1,
+    "imageList": [
+      {
+        "dryRun": false,
+        "imageMeta": {
+          "ID": "CAM_1009efd7",
+          "ROIs": [
+            {
+              "ID": "ROI55",
+              "calibratorID": "CALIB7",
+              "filterClass": [],
+              "focusGroup": 0,
+              "line": {
+                "coordinates": {
+                  "end": [
+                    1350,
+                    1080
+                  ],
+                  "start": [
+                    1250,
+                    0
+                  ]
+                },
+                "region": {
+                  "lower": "Entry",
+                  "upper": "Exit"
+                }
+              },
+              "name": "Camera image 1",
+              "polygonCoordinates": [
+              ],
+              "refPoint": [
+              ],
+              "type": "image"
+            }
+          ],
+          "angle": 0,
+          "calibrators": [
+          ],
+          "channels": 3,
+          "dashboardCameraID": "CAM_1009efd7",
+          "extras": {
+            "timestamp": "20221002061151.313"
+          },
+          "height": 1080,
+          "width": 1920,
+          "imageName": "/app/mounts/images_received/2022-10-02/CAM_1009efd7/1664691112650_15d2b7_1009efd7_20221002061151_313.jpeg",
+          "isFirst": true,
+          "metadata": {
+            "timestamp": "20221002061151.313"
+          },
+          "name": "Test Camera",
+          "orgHeight": 1080,
+          "orgWidth": 1920,
+          "redisInfo": {
+            "input": true,
+            "nodeServer": false
+          },
+          "relatedImageCount": 1,
+          "rules": [
+            {
+              "ID": "RULE100",
+              "advanced": {
+                "classifierv2": {
+                  "enable": true
+                }
+              }
+            }
+          ],
+          "rulesActivation": [
+            {
+              "ID": "RA01",
+              "ROIs": [
+                "ROI55"
+              ],
+              "name": "Progress rule",
+              "rules": [
+                "RULE100"
+              ],
+              "triggerTime": {
+                "endTime": "23:59",
+                "startTime": "00:00"
+              }
+            }
+          ],
+          "sendResponse": true,
+          "timestamp": 16646911126234
+        },
+        "inference": {
+          "detections": {
+            "person":[
+              {
+                "ID": -1,
+                "confidence": 0.50,
+                "coordinates": {
+                  "xmax": 610,
+                  "xmin": 530,
+                  "ymax": 925,
+                  "ymin": 735
+                },
+                "id": 1,
+                "similar": false,
+                "invalid": false,
+                "parent_id": -1
+              },
+              {
+                "ID": -1,
+                "confidence": 0.92,
+                "coordinates": {
+                  "xmax": 1770,
+                  "xmin": 1661,
+                  "ymax": 535,
+                  "ymin": 305
+                },
+                "id": 2,
+                "invalid": false,
+                "parent_id": -1
+              },
+              {
+                "ID": -1,
+                "confidence": 0.92,
+                "coordinates": {
+                  "xmax": 1828,
+                  "xmin": 1678,
+                  "ymax": 970,
+                  "ymin": 792
+                },
+                "id": 3,
+                "invalid": false,
+                "parent_id": -1
+              }
+            ]
+          }
+        },
+        "tags": {
+          "camID": "CAM_1009efd7",
+          "camName": "Test Camera"
+        }
+      }
+    ],
+    "timeLogs": [
+      {
+        "recvTime": 1664691112726,
+        "sendTime": 1664691112743,
+        "moduleName": "perimeter3-reid1"
+      }
+    ]
+  }
+}

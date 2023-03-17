@@ -1,0 +1,49 @@
+Generic: 
+  orchestrator_port: 5000
+  version: "1.2"
+
+classifierv2:
+    onnxmodel: "/app/mounts/models/fp_tp_128.onnx"
+    trtengine: "/app/mounts/models/fp_tp_128.trt"
+    labels: "/app/mounts/models/mapping_file.txt"
+    batch_size: 4
+    output_size: 2 #10
+    input_channel: 3
+    model_type: 'FP32'
+    debug_level: 10
+    frame_debug_interval: 1
+    input_config:
+        width: 128
+        height: 128
+    output_config:
+        name: "fptp"
+        skip: ["CAM2"]
+        bboxType: ["person"]
+
+monitoring_engine:
+  sendToMonitorDashboard: true
+  sendToEventDashboard: false
+  camIgnoreTimeLimit: 60000 # time limit for each camera to receive alerts in milliseconds
+  debugLevel: 20
+  performance:
+    avgCount: 100
+    logFrequency: 60000
+    duration: [10,100]
+  error:
+    bufferLimit: 200 #in numbers
+  events:
+    refreshFrequency: 1 # expected in days
+  temperature:
+    checkTemp: true
+    safeRestartThreshold: 15 #ideally safe_restart_thresh > temperature_threshold always
+    temperatureThreshold: 1
+    x86CriticalTemperature: 110
+  diskSpace:
+    diskSpaceCheck: true
+    diskSpaceThreshold: 99
+    location: ["/"]
+  history:
+    deleteOld: true
+    clearDir: "/app/mounts/dumps"
+    checkHistory: true
+    period: 10

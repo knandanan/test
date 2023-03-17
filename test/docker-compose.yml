@@ -1,0 +1,53 @@
+networks:
+  perimeter-network:
+    driver: bridge
+    ipam:
+      config:
+      - gateway: 10.16.239.1
+        subnet: 10.16.239.0/24
+      driver: default
+services:
+  # orchestrator:
+  #   command: sleep 10 ; sh run_orchestrator.sh
+  #   container_name: perimeter3-orchestrator
+  #   environment:
+  #   - PROJECT_NAME=perimeter3
+  #   image: uvdeployment/shield:orchestrator_amd64_working
+  #   logging:
+  #     options:
+  #       max-file: '5'
+  #       max-size: 10m
+  #   mem_limit: 500M
+  #   networks:
+  #     perimeter-network:
+  #       ipv4_address: 10.16.239.10
+  #   restart: always
+  #   volumes:
+  #   - ./mounts/config/orchestrator:/app/config:ro
+  #   - /etc/localtime:/etc/localtime:ro
+  #   - /var/run/docker.sock:/var/run/docker.sock
+  classifierv2:
+    container_name: perimeter3-classifierv2
+    image: classifierv2:prod
+    networks:
+      perimeter-network:
+        ipv4_address: 10.16.239.20
+    mem_limit: 1500M
+    runtime: nvidia
+    ports:
+      - 5111:5011
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "5"
+    environment:
+      - RUN_MODE=1
+      - NODENAME=perimeter3-classifierv2
+      - ORCHESTRATOR_PORT=5000
+      - ORCHESTRATOR_IP=10.16.239.10
+      - SERVICE_NAME=classifierv2
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./mounts/:/app/mounts/
+
+version: '2.3'

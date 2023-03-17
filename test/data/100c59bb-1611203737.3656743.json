@@ -1,0 +1,389 @@
+{
+    "moduleData": {
+      "dryRun": false,
+      "imageCount": 1,
+      "imageList": [
+        {
+          "dryRun": false,
+          "imageMeta": {
+            "ID": "CAM_1009efd7",
+            "ROIs": [
+              {
+                "ID": "ROI55",
+                "calibratorID": "CALIB7",
+                "filterClass": [],
+                "focusGroup": 0,
+                "line": {
+                  "coordinates": {
+                    "end": [
+                      1350,
+                      1080
+                    ],
+                    "start": [
+                      1250,
+                      0
+                    ]
+                  },
+                  "region": {
+                    "lower": "Entry",
+                    "upper": "Exit"
+                  }
+                },
+                "name": "Camera image 1",
+                "polygonCoordinates": [],
+                "refPoint": [],
+                "type": "image"
+              }
+            ],
+            "angle": 0,
+            "calibrators": [],
+            "channels": 3,
+            "dashboardCameraID": "CAM_1009efd7",
+            "extras": {
+              "timestamp": "20221002061151.313"
+            },
+            "height": 480,
+            "imageName": "/home/uncanny/projects/github_commit/fp_reduction/uv-vapipeline-classifier-v2/test/data/kiran_team/data/images/100c59bb-1611203737.3656743.jpg",
+            "isFirst": true,
+            "metadata": {
+              "timestamp": "20221002061151.313"
+            },
+            "name": "Test Camera",
+            "orgHeight": 480,
+            "orgWidth": 704,
+            "redisInfo": {
+              "input": true,
+              "nodeServer": false
+            },
+            "relatedImageCount": 1,
+            "rules": [
+              {
+                "ID": "RULE100",
+                "advanced": {
+                  "signature": {
+                    "enable": true
+                  }
+                }
+              }
+            ],
+            "rulesActivation": [
+              {
+                "ID": "RA01",
+                "ROIs": [
+                  "ROI55"
+                ],
+                "name": "Progress rule",
+                "rules": [
+                  "RULE100"
+                ],
+                "triggerTime": {
+                  "endTime": "23:59",
+                  "startTime": "00:00"
+                }
+              }
+            ],
+            "sendResponse": true,
+            "timestamp": 16646911126234,
+            "width": 704
+          },
+          "inference": {
+            "detections": {
+              "person": [
+                {
+                  "ID": -1,
+                  "confidence": 0.92,
+                  "coordinates": {
+                    "xmax": 368,
+                    "xmin": 332,
+                    "ymax": 298,
+                    "ymin": 262
+                  },
+                  "invalid": false,
+                  "parent_id": -1,
+                  "id": 1,
+                  "fp": false
+                },
+                {
+                  "ID": -1,
+                  "confidence": 0.92,
+                  "coordinates": {
+                    "xmax": 362,
+                    "xmin": 350,
+                    "ymax": 23,
+                    "ymin": 3
+                  },
+                  "invalid": false,
+                  "parent_id": -1,
+                  "id": 2,
+                  "fp": false
+                },
+                {
+                  "ID": -1,
+                  "confidence": 0.92,
+                  "coordinates": {
+                    "xmax": 73,
+                    "xmin": 37,
+                    "ymax": 71,
+                    "ymin": 13
+                  },
+                  "invalid": false,
+                  "parent_id": -1,
+                  "id": 3,
+                  "fp": false
+                },
+                {
+                  "ID": -1,
+                  "confidence": 0.92,
+                  "coordinates": {
+                    "xmax": 162,
+                    "xmin": 111,
+                    "ymax": 97,
+                    "ymin": 30
+                  },
+                  "invalid": false,
+                  "parent_id": -1,
+                  "id": 4,
+                  "fp": false
+                },
+                {
+                  "ID": -1,
+                  "confidence": 0.92,
+                  "coordinates": {
+                    "xmax": 623,
+                    "xmin": 602,
+                    "ymax": 53,
+                    "ymin": 16
+                  },
+                  "invalid": false,
+                  "parent_id": -1,
+                  "id": 5,
+                  "fp": false
+                },
+                {
+                  "ID": -1,
+                  "confidence": 0.92,
+                  "coordinates": {
+                    "xmax": 612,
+                    "xmin": 599,
+                    "ymax": 265,
+                    "ymin": 245
+                  },
+                  "invalid": false,
+                  "parent_id": -1,
+                  "id": 6,
+                  "fp": false
+                },
+                {
+                  "ID": -1,
+                  "confidence": 0.92,
+                  "coordinates": {
+                    "xmax": 644,
+                    "xmin": 627,
+                    "ymax": 281,
+                    "ymin": 262
+                  },
+                  "invalid": false,
+                  "parent_id": -1,
+                  "id": 7,
+                  "fp": false
+                },
+                {
+                  "ID": -1,
+                  "confidence": 0.92,
+                  "coordinates": {
+                    "xmax": 309,
+                    "xmin": 292,
+                    "ymax": 43,
+                    "ymin": 10
+                  },
+                  "invalid": false,
+                  "parent_id": -1,
+                  "id": 8,
+                  "fp": false
+                },
+                {
+                  "ID": -1,
+                  "confidence": 0.92,
+                  "coordinates": {
+                    "xmax": 368,
+                    "xmin": 313,
+                    "ymax": 73,
+                    "ymin": 14
+                  },
+                  "invalid": false,
+                  "parent_id": -1,
+                  "id": 9,
+                  "fp": false
+                },
+                {
+                  "ID": -1,
+                  "confidence": 0.92,
+                  "coordinates": {
+                    "xmax": 162,
+                    "xmin": 125,
+                    "ymax": 296,
+                    "ymin": 265
+                  },
+                  "invalid": false,
+                  "parent_id": -1,
+                  "id": 10,
+                  "fp": false
+                },
+                {
+                  "ID": -1,
+                  "confidence": 0.92,
+                  "coordinates": {
+                    "xmax": 178,
+                    "xmin": 144,
+                    "ymax": 53,
+                    "ymin": 14
+                  },
+                  "invalid": false,
+                  "parent_id": -1,
+                  "id": 11,
+                  "fp": false
+                },
+                {
+                  "ID": -1,
+                  "confidence": 0.92,
+                  "coordinates": {
+                    "xmax": 290,
+                    "xmin": 239,
+                    "ymax": 291,
+                    "ymin": 269
+                  },
+                  "invalid": false,
+                  "parent_id": -1,
+                  "id": 12,
+                  "fp": false
+                },
+                {
+                  "ID": -1,
+                  "confidence": 0.92,
+                  "coordinates": {
+                    "xmax": 543,
+                    "xmin": 521,
+                    "ymax": 63,
+                    "ymin": 13
+                  },
+                  "invalid": false,
+                  "parent_id": -1,
+                  "id": 13,
+                  "fp": false
+                },
+                {
+                  "ID": -1,
+                  "confidence": 0.92,
+                  "coordinates": {
+                    "xmax": 672,
+                    "xmin": 647,
+                    "ymax": 39,
+                    "ymin": 18
+                  },
+                  "invalid": false,
+                  "parent_id": -1,
+                  "id": 14,
+                  "fp": false
+                },
+                {
+                  "ID": -1,
+                  "confidence": 0.92,
+                  "coordinates": {
+                    "xmax": 186,
+                    "xmin": 171,
+                    "ymax": 21,
+                    "ymin": 3
+                  },
+                  "invalid": false,
+                  "parent_id": -1,
+                  "id": 15,
+                  "fp": false
+                },
+                {
+                  "ID": -1,
+                  "confidence": 0.92,
+                  "coordinates": {
+                    "xmax": 528,
+                    "xmin": 505,
+                    "ymax": 287,
+                    "ymin": 251
+                  },
+                  "invalid": false,
+                  "parent_id": -1,
+                  "id": 16,
+                  "fp": false
+                },
+                {
+                  "ID": -1,
+                  "confidence": 0.92,
+                  "coordinates": {
+                    "xmax": 495,
+                    "xmin": 460,
+                    "ymax": 60,
+                    "ymin": 14
+                  },
+                  "invalid": false,
+                  "parent_id": -1,
+                  "id": 17,
+                  "fp": false
+                },
+                {
+                  "ID": -1,
+                  "confidence": 0.92,
+                  "coordinates": {
+                    "xmax": 395,
+                    "xmin": 384,
+                    "ymax": 24,
+                    "ymin": 3
+                  },
+                  "invalid": false,
+                  "parent_id": -1,
+                  "id": 18,
+                  "fp": false
+                },
+                {
+                  "ID": -1,
+                  "confidence": 0.92,
+                  "coordinates": {
+                    "xmax": 692,
+                    "xmin": 662,
+                    "ymax": 79,
+                    "ymin": 21
+                  },
+                  "invalid": false,
+                  "parent_id": -1,
+                  "id": 19,
+                  "fp": false
+                },
+                {
+                  "ID": -1,
+                  "confidence": 0.92,
+                  "coordinates": {
+                    "xmax": 8,
+                    "xmin": 0,
+                    "ymax": 26,
+                    "ymin": 8
+                  },
+                  "invalid": false,
+                  "parent_id": -1,
+                  "fp": true,
+                  "id": 20
+                }
+              ]
+            }
+          },
+          "tags": {
+            "camID": "CAM_1009efd7",
+            "camName": "Test Camera"
+          }
+        }
+      ],
+      "timeLogs": [
+        {
+          "recvTime": 1664691112726,
+          "sendTime": 1664691112743,
+          "moduleName": "perimeter3-reid1"
+        }
+      ]
+    }
+  }
